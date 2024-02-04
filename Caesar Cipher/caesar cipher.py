@@ -10,7 +10,18 @@ print(logo)
 def caesar(start_text, shift_amount, cipher_direction):
     end_text = ""
 
-    
+    if cipher_direction == "decode":
+        shift_amount *= -1
+    for char in start_text:
+
+        if char not in alphabet:
+            end_text += char
+        else:
+            position = alphabet.index(char)
+            new_position = position + shift_amount
+            end_text += alphabet[new_position]
+
+    print(f"Here's the {cipher_direction}d result: {end_text}")
 
 
 while re_run:
