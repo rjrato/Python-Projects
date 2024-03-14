@@ -8,9 +8,10 @@ import shutil
 
 class SyncFolder:
 
-    def __init__(self, source_folder_entry, replica_folder_entry, sync_time_entry, app_interface):
+    def __init__(self, source_folder_entry, replica_folder_entry, sync_time_entry, logs_folder_entry, app_interface):
         self.source_folder_entry = source_folder_entry
         self.replica_folder_entry = replica_folder_entry
+        self.logs_folder_entry = logs_folder_entry
         self.sync_time_entry = sync_time_entry
         self.app_interface = app_interface
         self.observer = Observer()
@@ -44,7 +45,7 @@ class SyncFolder:
 
         else:
 
-            event_handler = EventHandler(self.app_interface)
+            event_handler = EventHandler(self.app_interface, self.logs_folder_entry)
             self.observer.schedule(event_handler, source_dir, recursive=True)
             self.observer.schedule(event_handler, replica_dir, recursive=True)
             self.observer.start()

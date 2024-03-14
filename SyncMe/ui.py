@@ -1,6 +1,7 @@
 from tkinter import *
 from dirSelect import DirectorySelection
 from syncFolders import SyncFolder
+from eventHandler import EventHandler
 
 FONT_COLOR = "#031f25"
 BACKGROUND_COLOR = "#ffffff"
@@ -77,6 +78,33 @@ class AppInterface:
             command=self.replica_folder_select.replica_folder
         )
 
+        self.logs_folder_label = Label(
+            text="Logs Folder",
+            fg=FONT_COLOR,
+            bg=BACKGROUND_COLOR,
+            font=(FONT_NAME, 12, "bold")
+        )
+
+        self.logs_folder_entry = Entry(width=60, borderwidth=2)
+
+        self.logs_folder_select = DirectorySelection(
+            logs_folder_entry=self.logs_folder_entry
+        )
+
+        self.logs_folder_dir = Button(
+            width=10,
+            text="Select",
+            fg=BACKGROUND_COLOR,
+            bg=BUTTON_COLOR_GREEN,
+            font=(FONT_NAME, 10, "normal"),
+            command=self.logs_folder_select.logs_folder
+        )
+
+        self.logs_folder_select = EventHandler(
+            logs_folder=self.logs_folder_entry,
+            app_interface=self
+        )
+
         self.sync_time_label = Label(
             text="Sync Time",
             fg=FONT_COLOR,
@@ -89,6 +117,7 @@ class AppInterface:
         self.sync_folder = SyncFolder(
             source_folder_entry=self.source_folder_entry,
             replica_folder_entry=self.replica_folder_entry,
+            logs_folder_entry=self.logs_folder_entry,
             sync_time_entry=self.sync_time_entry,
             app_interface=self
         )
@@ -121,9 +150,12 @@ class AppInterface:
         self.replica_folder_label.grid(column=0, row=3, sticky="e")
         self.replica_folder_entry.grid(column=1, row=3, padx=10, sticky="w")
         self.replica_folder_dir.grid(column=2, row=3, padx=10, pady=2, sticky="e")
-        self.sync_time_label.grid(column=0, row=4, sticky="e")
-        self.sync_time_entry.grid(column=1, row=4, padx=10, pady=2, sticky="w")
-        self.sync_button.grid(column=0, row=5, columnspan=3, pady=10)
+        self.logs_folder_label.grid(column=0, row=4, sticky="e")
+        self.logs_folder_entry.grid(column=1, row=4, padx=10, sticky="w")
+        self.logs_folder_dir.grid(column=2, row=4, padx=10, pady=2, sticky="e")
+        self.sync_time_label.grid(column=0, row=5, sticky="e")
+        self.sync_time_entry.grid(column=1, row=5, padx=10, pady=2, sticky="w")
+        self.sync_button.grid(column=0, row=6, columnspan=3, pady=10)
 
         # _______________________________ BUTTON HOOVERING____________________________________________________________
 
@@ -138,6 +170,12 @@ class AppInterface:
 
         def replica_folder_dir_on_leave(e):
             self.replica_folder_dir.config(background=BUTTON_COLOR_GREEN, foreground=BACKGROUND_COLOR)
+
+        def logs_folder_on_enter(e):
+            self.logs_folder_dir.config(background=BUTTON_HOOVERING_COLOR_GREEN, foreground=BACKGROUND_COLOR)
+
+        def logs_folder_on_leave(e):
+            self.logs_folder_dir.config(background=BUTTON_COLOR_GREEN, foreground=BACKGROUND_COLOR)
 
         def sync_button_on_enter(e):
             if self.sync_button["background"] == BUTTON_COLOR_GREEN:
@@ -155,6 +193,8 @@ class AppInterface:
         self.source_folder_dir.bind("<Leave>", source_folder_on_leave)
         self.replica_folder_dir.bind("<Enter>", replica_folder_dir_on_enter)
         self.replica_folder_dir.bind("<Leave>", replica_folder_dir_on_leave)
+        self.logs_folder_dir.bind("<Enter>", logs_folder_on_enter)
+        self.logs_folder_dir.bind("<Leave>", logs_folder_on_leave)
         self.sync_button.bind("<Enter>", sync_button_on_enter)
         self.sync_button.bind("<Leave>", sync_button_on_leave)
 
@@ -176,13 +216,13 @@ class AppInterface:
                 self.sync_button.config(text="Stop Sync", bg=BUTTON_HOOVERING_COLOR_RED)
                 self.log_output.config(state="normal")
                 self.log_output.insert(INSERT, "Synchronization started\n")
-                self.log_output.grid(column=0, row=6, columnspan=3, pady=5, padx=10)
+                self.log_output.grid(column=0, row=7, columnspan=3, pady=5, padx=10)
 
             else:
 
                 self.log_output.config(state="normal")
                 self.log_output.insert(INSERT, "Synchronization cannot continue. Please provide the required missing fields.\n")
-                self.log_output.grid(column=0, row=6, columnspan=3, pady=5, padx=10)
+                self.log_output.grid(column=0, row=7, columnspan=3, pady=5, padx=10)
 
     def stop_sync(self):
         self.is_sync_active = False

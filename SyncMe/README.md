@@ -12,9 +12,8 @@ logo.png
 favicon.ico
 
 ```
-The App is already built with "pyinstaller", you can just run "main.exe" and try it! After the first run it will create another file, "event_log.txt",
-where you will find all operations done.
+The App is already built with "pyinstaller", you can just run "main.exe" and try it!
 
-When you run the App you will find a simple interface, with 3 inputs: "Source Folder", "Replica Folder" and "Sync Time".
+When you run the App you will find a simple interface, with 4 inputs: "Source Folder", "Replica Folder", "Logs Folder and "Sync Time".
 After you define all of them, just click on "Sync Folder" button, and voilá, it's running.
 Hope you appreciate it!
