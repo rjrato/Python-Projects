@@ -1,6 +1,6 @@
 # SyncMe
 ### Description:
-This project was built for a Technical Task I must accomplish. It's a folder replication tool, 
+This project was built for a Technical Task I needed to complete. It's a folder replication tool, 
 where the user should provide the folder he wants to replicate, the destination folder and also the sync time interval.
 I decided to built it with Python, the language I've been working with for the last few months, regarding a Python Bootcamp I'm enrolled. 
 I took the opportunity to practice a little bit with Tkinter module and end up building this project with a graphical interface, hope you enjoy it! :)
