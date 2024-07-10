@@ -29,7 +29,7 @@ This Python program recreates a classic arcade-style game where the player contr
 Ensure Python is installed on your system. Clone the repository and run the following command:
 
 ```bash
-python turtle_crossing_game.py
+python main.py
 ```
 
 ## Dependencies
