@@ -18,7 +18,7 @@ The Caesar Cipher is a type of substitution cipher where each letter in the plai
 To run the app, ensure you have Python installed. Then, execute the following command in your terminal:
 
 ```bash
-python caesar_cipher.py
+python "caesar cipher".py
 ```
 ## User Instructions
 
