@@ -36,7 +36,7 @@ Below is a list of the projects currently in this repository:
 
 5. **ShieldPass Vault**
    - A password manager application to securely store and manage passwords.
-   - [More Details](./shieldpass-vault/README.md)
+   - [More Details](./ShieldPass%20Vault/README.md)
 
 6. **Snake Game**
    - The classic Snake game implemented in Python.
@@ -44,7 +44,7 @@ Below is a list of the projects currently in this repository:
 
 7. **Stock Trading News Alert**
    - A system that monitors stock price changes and sends SMS alerts with relevant news articles.
-   - [More Details](./stock-trading-news-alert/README.md)
+   - [More Details](./Stock%20Trading%20News%20Alert/README.md)
 
 8. **syncMe**
    - A replication tool used to backup any desired folder.
