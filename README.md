@@ -20,19 +20,19 @@ Below is a list of the projects currently in this repository:
 
 1. **Blackjack**
    - A simple blackjack game implemented in Python.
-   - [More Details](./blackjack/README.md)
+   - [More Details](./Blackjack/README.md)
 
 2. **Caesar Cipher**
    - A tool to encode and decode messages using the Caesar Cipher technique.
-   - [More Details](./caesar-cipher/README.md)
+   - [More Details](./Caesar%20Cipher/README.md)
 
 3. **Coffee Machine**
    - A program suitable for embedding in any simple coffee machine.
-   - [More Details](./coffee-machine/README.md)
+   - [More Details](./Coffee%20Machine/README.md)
 
 4. **Pong Game**
    - A classic Pong game implementation in Python.
-   - [More Details](./pong-game/README.md)
+   - [More Details](./Pong%20Game/README.md)
 
 5. **ShieldPass Vault**
    - A password manager application to securely store and manage passwords.
@@ -40,7 +40,7 @@ Below is a list of the projects currently in this repository:
 
 6. **Snake Game**
    - The classic Snake game implemented in Python.
-   - [More Details](./snake-game/README.md)
+   - [More Details](./Snake%20Game/README.md)
 
 7. **Stock Trading News Alert**
    - A system that monitors stock price changes and sends SMS alerts with relevant news articles.
@@ -52,11 +52,11 @@ Below is a list of the projects currently in this repository:
 
 9. **Turtle Crossing Game**
    - A game where the player controls a turtle to cross a busy road.
-   - [More Details](./turtle-crossing-game/README.md)
+   - [More Details](./Turtle%20Crossing%20Game/README.md)
 
 10. **Weather Alert**
     - Uses the [OpenWeatherMap API](https://api.openweathermap.org/data/2.5/forecast) to get weather data. If rain is forecasted, the user receives a warning SMS.
-    - [More Details](./weather-alert/README.md)
+    - [More Details](./Weather%20Alert/README.md)
 
 ## Getting Started
 
