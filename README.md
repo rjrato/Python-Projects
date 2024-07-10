@@ -48,7 +48,7 @@ Below is a list of the projects currently in this repository:
 
 8. **syncMe**
    - A replication tool used to backup any desired folder.
-   - [More Details](./syncme/README.md)
+   - [More Details](./SyncMe/README.md)
 
 9. **Turtle Crossing Game**
    - A game where the player controls a turtle to cross a busy road.
